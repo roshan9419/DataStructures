@@ -1,4 +1,14 @@
 /*
+Time Complexity:
+BC - O(nlogn)
+AC - O(nlogn)
+WC - O(n^2) //if array is already sorted
+
+O(1) - Space Complexity, In place algorithm
+
+PIVOT NODE::
+the element through which we are sorting, like we can take the last or first node, and elements to its left are smaller and elements after it must be greater
+
 QuickSort(A, p, r) {
 	if p<r {
 		q = PARTITION(A, p, r)
@@ -18,14 +28,6 @@ PARTITION(A, p, r) {
 	swap(A[i+1], A[r])
 	return i+1
 }
-
-Time Complexity:
-BC - O(nlogn)
-AC - O(nlogn)
-WC - O(n^2) //if array is already sorted
-
-PIVOT NODE::
-the element through which we are sorting, like we can take the last or first node, and elements to its left are smaller and elements after it must be greater
 */
 
 #include<bits/stdc++.h>
