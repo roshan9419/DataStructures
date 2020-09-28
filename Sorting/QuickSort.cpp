@@ -37,25 +37,25 @@ void print(int a[], int n);
 void QuickSort(int a[], int p, int r);
 int PARTITION(int a[], int p, int r);
 
-void QuickSort(int a[], int p, int r) {
-	if(p<r) {
-		int q = PARTITION(a, p, r);
-		QuickSort(a, p, q-1);
-		QuickSort(a, q+1, r);
+void QuickSort(int a[], int start, int end) {
+	if(start<end) {
+		int pIndex = PARTITION(a, start, end);
+		QuickSort(a, start, pIndex-1);
+		QuickSort(a, pIndex+1, end);
 	}
 }
 
-int PARTITION(int a[], int p, int r) {
-	int pivot = a[r];
-	int i=p-1;
-	for(int j=p; j<=r-1; j++) {
-		if(a[j]<=pivot) {
-			i++;
-			swap(a[i], a[j]);
+int PARTITION(int a[], int start, int end) {
+	int pivot = a[end];
+	int pIndex = start;
+	for(int i=start; i<end; i++) {
+		if(a[i]<=pivot) {
+			swap(a[i], a[pIndex]);
+			pIndex++;
 		}
 	}
-	swap(a[i+1], a[r]);
-	return i+1;
+	swap(a[pIndex], a[end]);
+	return pIndex;
 }
 
 int main() {
